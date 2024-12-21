@@ -1,10 +1,15 @@
-from PySide6.QtWidgets import QApplication, QWidget # QApplication handles the main GUI application settings and QWidget is the base class for all user interface objects
+# QApplication handles the main GUI application settings and QWidget is the base class for all user interface objects
+from PySide6.QtWidgets import QApplication, QWidget 
 
-import sys # For commandline functionality
+# Commandline functionality
+import sys 
 
-app = QApplication(sys.argv) # Creates an instance of QApplication with a list of command-line arguments
+# Instance of QApplication with a list of command-line arguments
+app = QApplication(sys.argv) 
 
-window = QWidget() # Creates an instance of the Qwidget class for the user interface 
-window.show() # setVisible(true)
+# Instance of the Qwidget class for the user interface and setVisible(true)
+window = QWidget() 
+window.show() 
 
-app.exec() # Starts main event loop until exit()
+# Main event loop until exit()
+app.exec() 
