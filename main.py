@@ -1,5 +1,5 @@
-# QApplication handles the main GUI application settings and QWidget is the base class for all user interface objects
-from PySide6.QtWidgets import QApplication, QWidget 
+# QApplication handles the main GUI application settings and QMainWindow + QPushButton are widget classes
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton 
 
 # Commandline functionality
 import sys 
@@ -7,9 +7,17 @@ import sys
 # Instance of QApplication with a list of command-line arguments
 app = QApplication(sys.argv) 
 
-# Instance of the Qwidget class for the user interface and setVisible(true)
-window = QWidget() 
-window.show() 
+# Instance of the MainWindow widget
+window = QMainWindow()
+window.setWindowTitle("My first MainWindow app")
 
-# Main event loop until exit()
+# Instance of the button widget
+button = QPushButton()
+button.setText("Press me")
+
+# Attatches button widget to the window
+window.setCentralWidget(button)
+
+# setVisible(true) and Main event loop until exit()
+window.show()
 app.exec() 
