@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QToolBar
+from PySide6.QtWidgets import QMainWindow, QToolBar, QPushButton
 from PySide6.QtGui import QAction, QIcon
 from PySide6.QtCore import QSize
 
@@ -43,6 +43,9 @@ class MainWindow(QMainWindow):
         action2.triggered.connect(self.toolbar_button_click)
         action2.setCheckable(True)
         toolbar.addAction(action2)
+
+        toolbar.addSeparator()
+        toolbar.addWidget(QPushButton("Click here"))
 
     def quit_app(self):
         self.app.quit()
