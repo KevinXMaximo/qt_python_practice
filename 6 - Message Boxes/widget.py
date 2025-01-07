@@ -34,8 +34,24 @@ class Widget(QWidget):
         layout.addWidget(button_about)
         self.setLayout(layout)
 
+    
+
     def button_clicked_hard(self):
-        print("Hard")
+        message = QMessageBox()
+        message.setMinimumSize(700, 200)
+        message.setWindowTitle("Message Title")
+        message.setText("Something Happened")
+        message.setInformativeText("Do you want to do something about it?")
+        message.setIcon(QMessageBox.Critical)
+        message.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        message.setDefaultButton(QMessageBox.Ok)
+
+        # Show the message box
+        ret = message.exec()
+        if ret == QMessageBox.Ok :
+            print("User chose OK")
+        else :
+            print ("User chose Cancel")
     def button_clicked_critical(self):
         print("Critical")
     def button_clicked_question(self):
