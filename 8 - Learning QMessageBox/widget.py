@@ -11,6 +11,7 @@ class Widget(QWidget):
         self.line_edit = QLineEdit()
 
         button = QPushButton("Grab Data")
+        button.clicked.connect(self.button_clicked)
         self.text_holder_label = QLabel("I AM HERE")
 
         h_layout = QHBoxLayout()
@@ -23,3 +24,7 @@ class Widget(QWidget):
         v_layout.addWidget(self.text_holder_label)
 
         self.setLayout(v_layout)
+
+    # Slots 
+    def button_clicked(self):
+        print("Fullname : ", self.line_edit.text())
