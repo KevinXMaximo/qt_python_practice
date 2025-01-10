@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
         v_layout.addWidget(compare_button)
         text_box_view.setLayout(v_layout) # Wraps both into a single widget to add it to the stack
 
-        compare_button.clicked.connect(lambda: list_printer(text_box_method1))
+        compare_button.clicked.connect(lambda: self.prepare_lists(text_box_method1, text_box_method2))
 
         # Set up the menu for inputting with csv files
         csv_method = CSVMethod()
@@ -64,8 +64,11 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(csv_method)
         self.setCentralWidget(self.stack)
 
-def list_printer(self):
-    print(self.text_edit.toPlainText())
+    def prepare_lists(self, text_box_method1, text_box_method2):
+        list1 = text_box_method1.text_edit.toPlainText().split()
+        list2 = text_box_method2.text_edit.toPlainText().split()
+
+        analyze(list1, list2)
 
 def analyze(list_1, list_2):
     overlap = []
@@ -74,4 +77,4 @@ def analyze(list_1, list_2):
         if i in list_2:
             overlap.append(i)
 
-    print(overlap)
+    print(f"The number of items that overlap is: {len(overlap)} \n\nThe overlaped items are as follows: \n\n {overlap}")
