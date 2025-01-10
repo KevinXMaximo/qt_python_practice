@@ -1,5 +1,6 @@
-from PySide6.QtWidgets import QWidget, QTextEdit, QHBoxLayout, QVBoxLayout, QPushButton
+from PySide6.QtWidgets import QHBoxLayout, QPushButton, QTextEdit, QVBoxLayout, QWidget
 
+# Class that handles lists being inputted through text pasted or typed into textboxes
 class TextboxMethod(QWidget):
     def __init__(self):
         super().__init__()
@@ -13,6 +14,7 @@ class TextboxMethod(QWidget):
         clear_button = QPushButton("Clear")
         clear_button.clicked.connect(self.text_edit.clear) 
 
+        # Widget Layout
         h_layout = QHBoxLayout()
         h_layout.addWidget(paste_button)
         h_layout.addWidget(clear_button)
@@ -23,5 +25,11 @@ class TextboxMethod(QWidget):
 
         self.setLayout(v_layout)
 
+    # Custom function for pasting text
     def paste(self):
         self.text_edit.paste()
+
+# Class that handles lists being inputted through drag-and-drop csv files
+class CSVMethod(QWidget):
+    def __init__(self):
+        super().__init__()
