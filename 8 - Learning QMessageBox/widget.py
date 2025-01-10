@@ -13,7 +13,8 @@ class Widget(QWidget):
         #self.line_edit.cursorPositionChanged.connect(self.cursor_position_changed)
         #self.line_edit.editingFinished.connect(self.editing_finished)
         #self.line_edit.returnPressed.connect(self.return_pressed)
-        self.line_edit.selectionChanged.connect(self.selection_changed)
+        #self.line_edit.selectionChanged.connect(self.selection_changed)
+        self.line_edit.textEdited.connect(self.text_edited)
 
         button = QPushButton("Grab Data")
         button.clicked.connect(self.button_clicked)
@@ -50,3 +51,6 @@ class Widget(QWidget):
 
     def selection_changed(self):
         print("Selection Changed: ", self.line_edit.selectedText())
+
+    def text_edited(self, new_text) :
+        print("Text edited. New text : ", new_text)
