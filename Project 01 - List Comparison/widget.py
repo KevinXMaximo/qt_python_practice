@@ -7,11 +7,16 @@ class TextboxMethod(QWidget):
 
         self.text_edit = QTextEdit()
 
+        self.setFixedHeight(250)
+        self.setFixedWidth(800)
+
         # Buttons
         paste_button = QPushButton("Paste")
+        paste_button.setStatusTip("Paste the contents of your clipboard")
         paste_button.clicked.connect(self.paste) # Go through a custom slot
-
+        
         clear_button = QPushButton("Clear")
+        clear_button.setStatusTip("Delete all text from the textbox below")
         clear_button.clicked.connect(self.text_edit.clear) 
 
         # Widget Layout
