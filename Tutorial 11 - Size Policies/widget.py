@@ -26,9 +26,9 @@ class Widget(QWidget):
         # button_2 and button_3 each take up 1 unit
 
         h_layout_2 = QHBoxLayout()
-        h_layout_2.addWidget(button_1)
-        h_layout_2.addWidget(button_2)
-        h_layout_2.addWidget(button_3)
+        h_layout_2.addWidget(button_1, 3)
+        h_layout_2.addWidget(button_2, 2)
+        h_layout_2.addWidget(button_3, 1)
 
         v_layout = QVBoxLayout()
         v_layout.addLayout(h_layout_1)
