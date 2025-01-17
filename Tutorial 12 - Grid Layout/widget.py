@@ -9,7 +9,7 @@ class Widget(QWidget):
         button_1 = QPushButton("One")
         button_2 = QPushButton("Two")
         button_3 = QPushButton("Three")
-        # button_3.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        button_3.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         button_4 = QPushButton("Four")
         button_5 = QPushButton("Five")
         button_6 = QPushButton("Six")
