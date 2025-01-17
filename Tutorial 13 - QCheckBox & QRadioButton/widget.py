@@ -27,3 +27,21 @@ class Widget(QWidget):
         layout.addWidget(os)
 
         self.setLayout(layout)
+
+    def windows_box_toggled(self, checked):
+        if(checked):
+            print("Windows box checked")
+        else:
+            print("Windows box unchecked")
+
+    def linux_box_toggled(self, checked):
+        if(checked):
+            print("Linux box checked")
+        else:
+            print("Linux box unchecked")
+    
+    def mac_box_toggled(self, checked):
+        if(checked):
+            print("Mac box checked")
+        else:
+            print("Mac box unchecked")
