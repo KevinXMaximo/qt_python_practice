@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget, QCheckBox, QHBoxLayout, QVBoxLayout, QGroupBox
+from PySide6.QtWidgets import QWidget, QCheckBox, QHBoxLayout, QVBoxLayout, QGroupBox, QButtonGroup
 
 class Widget(QWidget):
     def __init__(self):
@@ -23,8 +23,29 @@ class Widget(QWidget):
         os_layout.addWidget(mac)
         os.setLayout(os_layout)
 
-        layout = QVBoxLayout()
+        # Exclusive checkboxes : Drinks
+        drinks = QGroupBox("Choose your drink")
+        beer = QCheckBox("Beer")
+        juice = QCheckBox("Juice")
+        coffee = QCheckBox("Coffee")
+        beer.setChecked(True)
+
+        # Make the checkboxes exclusive
+        exclusive_button_group = QButtonGroup(self) # The self parent is needed here 
+        exclusive_button_group.addButton(beer)
+        exclusive_button_group.addButton(juice)
+        exclusive_button_group.addButton(coffee)
+        exclusive_button_group.setExclusive(True)
+
+        drink_layout = QVBoxLayout()
+        drink_layout.addWidget(beer)
+        drink_layout.addWidget(juice)
+        drink_layout.addWidget(coffee)
+        drink_layout.setLayout(drink_layout)
+
+        layout = QHBoxLayout()
         layout.addWidget(os)
+        layout.addWidget(drinks)
 
         self.setLayout(layout)
 
